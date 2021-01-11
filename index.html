@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='ControllerAsApp'>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="app.js"></script>
+	 <script src="style"></script>
+	 <link rel="stylesheet" href="style.css">
+    <title>Каталог автомобілів</title>
+</head>
+<body>
+<div id="list1" ng-controller='ShoppingListController1 as list1'>
+    <h2>Каталог автомобілів:</h2>
+	
+    <ol>
+        <li ng-repeat="item in list1.item">
+            {{item.quantity}} {{item.name}}
+            <button  id = "btn" ng-click="list1.removeItem($index);">Видалити</button>
+			<button  id = "btn2" ng-click="">Приховати</button>
+       	   </li>
+    </ol>
+	
+	
+	
+	
+	<div ng-if="list1.item.length === 0">
+        <h4>список порожній!</h4>
+    </div>
+</div>
+
+</body>
+</html>
